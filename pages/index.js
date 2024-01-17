@@ -2,11 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { useState } from "react";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  console.log("asd");
+  const [number, setNumber] = useState(0)
   return (
     <>
       <Head>
@@ -16,6 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
+        <Header number={number} handleNumber={() => setNumber((prevState) => prevState +1)} />
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
@@ -109,6 +113,7 @@ export default function Home() {
             </p>
           </a>
         </div>
+        <Footer />
       </main>
     </>
   );

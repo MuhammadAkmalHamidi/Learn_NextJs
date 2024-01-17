@@ -5,26 +5,15 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended",
-        "airbnb"
+        "plugin:react/recommended"
     ],
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
     "plugins": [
         "react"
     ],
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "object-curly-newline": [
-            "error",
-            {
-                "ObjectExpression": "always",
-                "ObjectPattern": { "multiline": true },
-                "ImportDeclaration": "never",
-                "ExportDeclaration": { "multiline": true, "minProperties": 3 }
-            }
-        ],
-        "beforeStatementContinuationChars": "never"
     }
 }

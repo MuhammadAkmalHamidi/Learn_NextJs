@@ -1,17 +1,19 @@
 import { withAuth } from "../with-auth";
+import styles from "./styles.module.css";
 
-function Header({handleNumber, number}) {
+function Header({ handleNumber, number }) {
   return (
     <div>
-      <div>
-        {number}
+      <div className={styles.container}>
+        <div className={styles.logo}>
+          Learning NextJs
+        </div>
+        <div className={styles.nav}>
+          <a href="/home">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
       </div>
-      <div>
-        <a href="/home">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-      </div>
-      <button onClick={handleNumber}>Increment</button>
     </div>
   );
 }

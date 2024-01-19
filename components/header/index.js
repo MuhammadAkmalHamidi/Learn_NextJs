@@ -9,7 +9,7 @@ function Header({ handleNumber, number }) {
           Learning NextJs
         </div>
         <div className={styles.nav}>
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
         </div>

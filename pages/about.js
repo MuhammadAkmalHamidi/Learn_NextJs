@@ -4,11 +4,11 @@ import { Layout } from "@/layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function About() {
   return (
     <>
       <Layout>
-        Ini Home
+        Ini About
       </Layout>
     </>
   );

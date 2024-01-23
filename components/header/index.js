@@ -11,6 +11,7 @@ function Header({ handleNumber, number }) {
         <div className={styles.nav}>
           <a href="/">Home</a>
           <a href="/about">About</a>
+          <a href="/portfolio">Portfolio</a>
           <a href="/contact">Contact</a>
         </div>
       </div>

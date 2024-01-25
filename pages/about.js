@@ -1,10 +1,16 @@
 import { Inter } from "next/font/google";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Layout } from "@/layout";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function About() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/hello")
+      .then((res) => res.json())
+      .then((res) => setData(res.users)).catch((error) => console.log(error));
+  }, []);
+
   return (
     <>
       <Layout
@@ -16,7 +22,16 @@ export default function About() {
           "personal website, portfolio, design, technology, creative, web development"
         }
       >
-        Ini About
+        <p className=" font-bold mb-3 text-2xl">this is my list friends :</p>
+        {data?.map((item, index) => {
+          return(
+            <ul className=" flex gap-2">
+              <p>{index + 1}.</p>
+              <li> {item?.firstName} </li>
+              <li> {item?.lastName} </li>
+            </ul>
+          )
+        })}
       </Layout>
     </>
   );

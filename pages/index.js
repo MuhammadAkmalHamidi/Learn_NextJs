@@ -1,15 +1,17 @@
-import { Inter } from "next/font/google";
 import { useState } from "react";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import { Layout } from "@/layout";
 
-const inter = Inter({ subsets: ["latin"] });
+// Import Layout menggunakan dynamic import
+const DynamicLayout = dynamic(() => import("@/layout"));
 
 export default function Home() {
   return (
-    <>
-      <Layout metaTitle="Home" metaKeyword={"personal website, portfolio, design, technology, creative, web development"} MetaDesc={" website that contains my personal information."}>
-        Ini Home
-      </Layout>
-    </>
+    <div>
+      <DynamicLayout>
+        <p>Ini Home</p>
+      </DynamicLayout>
+    </div>
   );
 }

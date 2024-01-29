@@ -1,5 +1,5 @@
 // pages/detailPortfolio/[id].js
-import { Layout } from "@/layout";
+import  Layout  from "@/layout";
 import Link from "next/link";
 import { useRouter } from "next/router";
 

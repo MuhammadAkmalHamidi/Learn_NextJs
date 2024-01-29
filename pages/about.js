@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
-import { Layout } from "@/layout";
+import  Layout  from "@/layout";
 
 export default function About() {
   const [data, setData] = useState([]);

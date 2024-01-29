@@ -1,13 +1,8 @@
-import { Layout } from "@/layout";
+import  Layout  from "@/layout";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Portfolio() {
-  const [id, setId] = useState(0);
-
-  const handleClick = (newId) => {
-    setId(newId);
-  };
 
   return (
     <div>

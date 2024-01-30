@@ -1,12 +1,16 @@
+import Layout from "@/layout";
+
 export default function notesById(params) {
   console.log(params);
   return (
-  <div>
-    <div>Title : {params.data.data.title}</div>
-    <div>description : {params.data.data.description}</div>
-    <div>Created by : {params.data.data.created_at}</div>
-  </div>
-  )
+    <Layout>
+      <div>
+        <div>Title : {params.data.data.title}</div>
+        <div>description : {params.data.data.description}</div>
+        <div>Created by : {params.data.data.created_at}</div>
+      </div>
+    </Layout>
+  );
 }
 
 export async function getStaticPaths() {
@@ -14,8 +18,8 @@ export async function getStaticPaths() {
   const data = await res.json();
   const paths = data.data.map((item) => ({
     params: {
-      id: item.id
-    }
+      id: item.id,
+    },
   }));
   return {
     paths,

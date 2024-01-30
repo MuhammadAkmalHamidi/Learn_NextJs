@@ -13,6 +13,7 @@ function Header({ handleNumber, number }) {
           <a href="/about">About</a>
           <a href="/portfolio">Portfolio</a>
           <a href="/contact">Contact</a>
+          <a href="/notes">Notes</a>
         </div>
       </div>
     </div>

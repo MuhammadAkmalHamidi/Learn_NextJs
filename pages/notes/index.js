@@ -1,12 +1,16 @@
 import EditNotesModal from "@/components/modal/edit-notes-modal";
 import { useQueries } from "@/hooks/useQueries";
 import Layout from "@/layout";
+import fetcher from "@/utils/fetcher";
 import Axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import useSWR from 'swr'
 
 export default function notes() {
-  const {data , isLoading, isError} = useQueries({prefixUrl: "https://paace-f178cafcae7b.nevacloud.io/api/notes"});
+  // const {data , isLoading, isError} = useQueries({prefixUrl: "https://paace-f178cafcae7b.nevacloud.io/api/notes"});
+  const {data, isLoading, error } = useSWR("https://paace-f178cafcae7b.nevacloud.io/api/notes", fetcher)
+  console.log(data);
   const [reload, setReload] = useState(false);
   const [open, setOpen] = useState(false);
   const [id, setId] = useState();

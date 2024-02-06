@@ -8,19 +8,26 @@ import { useEffect, useState } from "react";
 import useSWR from 'swr'
 
 export default function notes() {
-  // const {data , isLoading, isError} = useQueries({prefixUrl: "https://paace-f178cafcae7b.nevacloud.io/api/notes"});
-  const {data, isLoading, error } = useSWR("https://paace-f178cafcae7b.nevacloud.io/api/notes", fetcher)
-  console.log(data);
+  // FETCH DATA WITH CUSTOM HOOKS
+    // const {data , isLoading, isError} = useQueries({prefixUrl: "https://paace-f178cafcae7b.nevacloud.io/api/notes"});
+  // FETCH DATA WITH CUSTOM HOOKS
+
+  //FETCH DATA WITH SWR
+    const {data, isLoading, error } = useSWR("https://paace-f178cafcae7b.nevacloud.io/api/notes", fetcher)
+  //FETCH DATA WITH SWR
+
   const [reload, setReload] = useState(false);
   const [open, setOpen] = useState(false);
   const [id, setId] = useState();
 
-  // const getData = async () => {
-  //   const response = await Axios.get(
-  //     "https://paace-f178cafcae7b.nevacloud.io/api/notes"
-  //   );
-  //   setData(response.data.data);
-  // };
+  // FETCH DATA WITH AXIOS
+    // const getData = async () => {
+    //   const response = await Axios.get(
+    //     "https://paace-f178cafcae7b.nevacloud.io/api/notes"
+    //   );
+    //   setData(response.data.data);
+    // };
+  // FETCH DATA WITH AXIOS
 
   const deleteNotesById = async (id) => {
     try {

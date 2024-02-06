@@ -1,4 +1,5 @@
 import Cookies from "js-cookie"
+import Link from "next/link"
 import { useState } from "react"
 
 export default function Login() {
@@ -25,7 +26,7 @@ export default function Login() {
           <input value={payload?.password} onChange={(e) => setPayload({...payload, password:e.target.value})} className=" border-2 rounded-md"/>
         </div>
         <div className=" flex justify-center mt-5">
-          <button onClick={handleLogin} className="p-2 bg-yellow-300 rounded-lg">Login</button>
+          <Link href={'/'} onClick={handleLogin} className="p-2 bg-yellow-300 rounded-lg">Login</Link>
         </div>
       </div>
     </div>
